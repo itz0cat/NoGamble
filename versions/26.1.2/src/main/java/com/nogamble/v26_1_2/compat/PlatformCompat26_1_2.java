@@ -14,7 +14,7 @@ public class PlatformCompat26_1_2 implements PlatformCompat {
     public void sendClientChatMessage(String message) {
         Minecraft mc = Minecraft.getInstance();
         if (mc != null && mc.player != null) {
-            mc.player.displayClientMessage(Component.literal(message), false);
+            mc.player.sendSystemMessage(Component.literal(message));
         }
     }
 
