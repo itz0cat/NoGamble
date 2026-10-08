@@ -13,8 +13,8 @@ public class PlatformCompat26_1_2 implements PlatformCompat {
     @Override
     public void sendClientChatMessage(String message) {
         Minecraft mc = Minecraft.getInstance();
-        if (mc != null && mc.gui != null && mc.gui.getChat() != null) {
-            mc.gui.getChat().addMessage(Component.literal(message));
+        if (mc != null && mc.player != null) {
+            mc.player.displayClientMessage(Component.literal(message), false);
         }
     }
 
