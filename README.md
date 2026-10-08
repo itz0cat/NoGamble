@@ -47,7 +47,7 @@ All commands are client-side only:
 ```json
 {
   "enabled": true,
-  "profileUrl": "https://raw.githubusercontent.com/<user>/<repo>/main/profiles.json",
+  "profileUrl": "https://raw.githubusercontent.com/itz0cat/NoGamble/main/profiles.json",
   "refreshMinutes": 60,
   "showBlockMessages": true,
   "localExtraBlocked": [],
@@ -103,7 +103,7 @@ You can host your profiles directly on GitHub (in a public repo or GitHub Gist).
 ### 3. Setup on GitHub
 1. Fork or create a repository on GitHub (or a public Gist).
 2. Commit your `profiles.json` to the default branch (e.g. `main`).
-3. Click **Raw** on GitHub to get the direct raw URL (e.g. `https://raw.githubusercontent.com/username/NoGamble/main/profiles.json`).
+3. Click **Raw** on GitHub to get the direct raw URL (e.g. `https://raw.githubusercontent.com/itz0cat/NoGamble/main/profiles.json`).
 4. Set `"profileUrl"` in `config/nogamble.json` to your raw URL, or run `/nogamble refresh`.
 
 ---

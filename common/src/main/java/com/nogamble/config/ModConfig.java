@@ -26,7 +26,7 @@ public class ModConfig {
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 
     private boolean enabled = true;
-    private String profileUrl = "https://raw.githubusercontent.com/<user>/<repo>/main/profiles.json";
+    private String profileUrl = "https://raw.githubusercontent.com/itz0cat/NoGamble/main/profiles.json";
     private int refreshMinutes = 60;
     private boolean showBlockMessages = true;
     private final Set<String> localExtraBlocked = new TreeSet<>(String.CASE_INSENSITIVE_ORDER);
