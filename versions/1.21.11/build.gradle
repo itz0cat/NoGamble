@@ -1,0 +1,55 @@
+plugins {
+    id 'fabric-loom' version "${rootProject.loom_version}"
+    id 'maven-publish'
+}
+
+base {
+    archivesName = "${rootProject.archives_base_name}"
+}
+version = "${rootProject.mod_version}+mc${project.minecraft_version}"
+
+sourceSets {
+    main {
+        java {
+            srcDirs += rootProject.file('common/src/main/java')
+        }
+    }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+    modImplementation "net.fabricmc:fabric-loader:${rootProject.loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
+    modCompileOnly "com.terraformersmc:modmenu:${project.modmenu_version}"
+}
+
+processResources {
+    inputs.property "version", rootProject.mod_version
+    inputs.property "minecraft_version", project.minecraft_version
+    inputs.property "loader_version", rootProject.loader_version
+
+    filesMatching("fabric.mod.json") {
+        expand "version": rootProject.mod_version,
+               "minecraft_version": project.minecraft_version,
+               "loader_version": rootProject.loader_version
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.release = 21
+    it.options.encoding = "UTF-8"
+}
+
+java {
+    withSourcesJar()
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
+jar {
+    from(rootProject.file("LICENSE")) {
+        rename { "${it}_${project.base.archivesName.get()}" }
+    }
+}

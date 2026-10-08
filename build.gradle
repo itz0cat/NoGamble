@@ -1,0 +1,32 @@
+plugins {
+    id 'base'
+}
+
+allprojects {
+    group = rootProject.maven_group
+    version = rootProject.mod_version
+
+    repositories {
+        mavenCentral()
+        maven {
+            name = 'Fabric'
+            url = 'https://maven.fabricmc.net/'
+        }
+        maven {
+            name = 'TerraformersMC'
+            url = 'https://maven.terraformersmc.com/'
+        }
+    }
+}
+
+// Convenience task to assemble and collect both versions into root build/libs
+tasks.register('buildMods', Copy) {
+    dependsOn ':versions:1.21.11:build', ':versions:26.1.2:build'
+    
+    from project(':versions:1.21.11').layout.buildDirectory.dir('libs')
+    from project(':versions:26.1.2').layout.buildDirectory.dir('libs')
+    into layout.buildDirectory.dir('libs')
+
+    include '*+mc*.jar'
+    exclude '*-sources.jar', '*-dev.jar'
+}

@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "updated": "2026-10-08",
+  "profiles": [
+    {
+      "id": "donut",
+      "name": "DonutSMP",
+      "servers": ["donutsmp.net", "*.donutsmp.net"],
+      "blockedCommands": ["cf", "coinflip", "jackpot"],
+      "blockedAliases": ["flip"]
+    },
+    {
+      "id": "global",
+      "name": "Global Default",
+      "servers": ["*"],
+      "blockedCommands": ["cf"],
+      "blockedAliases": []
+    }
+  ]
+}

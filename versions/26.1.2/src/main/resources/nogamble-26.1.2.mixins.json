@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "com.nogamble.v26_1_2.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "client": [
+    "CommandSuggestionsMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

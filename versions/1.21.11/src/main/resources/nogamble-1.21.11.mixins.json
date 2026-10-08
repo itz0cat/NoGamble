@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "com.nogamble.v1_21_11.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "ChatInputSuggestorMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

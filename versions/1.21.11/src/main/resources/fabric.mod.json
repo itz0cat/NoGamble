@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "nogamble",
+  "version": "${version}",
+  "name": "NoGamble",
+  "description": "Client-side mod that blocks in-game gambling commands (/cf) to prevent impulsive gambling.",
+  "authors": [
+    "NoGamble Contributors"
+  ],
+  "contact": {
+    "homepage": "https://github.com",
+    "sources": "https://github.com"
+  },
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.nogamble.v1_21_11.NoGamble1_21_11"
+    ],
+    "modmenu": [
+      "com.nogamble.v1_21_11.modmenu.ModMenuCompat1_21_11"
+    ]
+  },
+  "mixins": [
+    "nogamble-1.21.11.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "minecraft": "1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
